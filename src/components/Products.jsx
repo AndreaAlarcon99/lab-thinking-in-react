@@ -13,7 +13,6 @@ function Products() {
           <th>Name</th>
           <th>Price</th>
             <th>Category</th>
-            <th>inStock</th>    
         </tr>
       </thead>
                 <tbody>
@@ -21,11 +20,9 @@ function Products() {
                         return (
                             
                     <tr>
-                        <td>{product.name}</td>
-                        <td>{product.price}</td>
-                        <td>{product.category}</td>
-                        <td>{product.inStock?"Yes":"No"}</td>
-
+                        <td> {product.inStock ? <p>{product.name}</p> : <p style={{ "color": "red" }}>{product.name} </p>} </td>
+                        <td> {product.inStock? <p>{product.price}</p>: <p style={{"color":"red"}}>{product.price} </p>} </td>
+                        <td> {product.inStock? <p>{product.category}</p>: <p style={{"color":"red"}}>{product.category} </p>} </td>     
                     </tr>
                         )
                     })}
